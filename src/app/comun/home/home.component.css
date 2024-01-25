@@ -2,3 +2,9 @@ tr{
   display: flex;
   justify-content: space-evenly;
 }
+
+h1 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
