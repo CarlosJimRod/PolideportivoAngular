@@ -1,1 +1,24 @@
-<p>partido-list works!</p>
+<div class="row">
+  <div class="col-4" style="background-color: #B1B2B4; padding: 50px">
+    <img src="https://s.france24.com/media/display/f1c47ecc-aa50-11ed-923b-005056bfb2b6/w:1280/p:4x3/2023-02-11T192833Z_596431449_UP1EJ2B1I3J5E_RTRMADP_3_SOCCER-CLUB-MAD-ALH-REPORT.JPG" height="100" width="100">
+    <h1>Partidos</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor porttitor ipsum quis consequat. Donec sed felis aliquam, malesuada mauris a, pulvinar lorem. Integer elementum ut mi et eleifend.</p>
+    <p class="nav-link"><i class="bi bi-plus-circle"></i><a class="ms-2">Nuevo Partido</a></p>
+  </div>
+  <div class="col-8" style="padding: 50px">
+    <div class="md-form active-cyan-2 mb-3">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    </div>
+    <div *ngIf="partidos$">
+      <table>
+        <tbody>
+        <tr *ngFor="let partido of partidos$ | async">
+          <td>{{partido.fechaHora}}</td>
+          <td>{{partido.idLocal}} - {{partido.idVisitante}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
