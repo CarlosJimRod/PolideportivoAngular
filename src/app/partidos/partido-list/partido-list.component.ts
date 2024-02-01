@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Partido} from "../../models/partidos";
 import {PartidosService} from "../../servicios/partidos.service";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-partido-list',
@@ -10,12 +9,13 @@ import {Observable} from "rxjs";
 })
 export class PartidoListComponent {
 
-  partidos$: Observable<Partido[]>
+  partidos: Partido[] = []
 
   constructor(private service: PartidosService) {
   }
 
   ngOnInit() {
-    this.partidos$ = this.service.getPartidos()
+    this.service.getPartidos().subscribe(partidos =>
+      this.partidos = partidos)
   }
 }
