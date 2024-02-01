@@ -10,8 +10,15 @@ import {PartidosService} from "../../servicios/partidos.service";
 export class PartidoListComponent {
 
   partidos: Partido[] = []
+  buscador: string = ""
 
   constructor(private service: PartidosService) {
+  }
+
+  partidosFiltrados() {
+    return this.partidos.filter(partido =>
+      partido.idLocal.toLowerCase().includes(this.buscador.toLowerCase()) ||
+      partido.idVisitante.toLowerCase().includes(this.buscador.toLowerCase()))
   }
 
   ngOnInit() {
