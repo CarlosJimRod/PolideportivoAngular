@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {RouterLink} from "@angular/router";
+import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 
 
 
@@ -11,7 +12,8 @@ import {RouterLink} from "@angular/router";
   declarations: [
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NoDisponibleComponent
   ],
   exports: [
     HeaderComponent,
