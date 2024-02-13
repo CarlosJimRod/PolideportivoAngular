@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import {FormBuilder} from "@angular/forms";
+import {ValidacionForm} from "./ValidacionForm";
 
 @Component({
   selector: 'app-partido-form',
@@ -8,14 +9,14 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class PartidoFormComponent {
   resultado!: string
-  equipos = ["ATHCLU(ESP)", "DEPORT(ESP)", "FCBARC(ESP)", "VIREAL(ESP)", "MALAGA(ESP)", "EIBAR(ESP)", "GETAFE(ESP)", "BETIS(ESP)", "RMADRID(ESP)", "LEVANT(ESP)"]
+  equipos = ["--selecciona un equipo--", "ATHCLU(ESP)", "DEPORT(ESP)", "FCBARC(ESP)", "VIREAL(ESP)", "MALAGA(ESP)", "EIBAR(ESP)", "GETAFE(ESP)", "BETIS(ESP)", "RMADRID(ESP)", "LEVANT(ESP)"]
 
   constructor(private fb: FormBuilder) {
   }
 
   formPartido = this.fb.group({
-    equipoLocal: ['', Validators.required],
-    equipoVisitante: ['', Validators.required]
+    equipoLocal: ["--selecciona un equipo--", ValidacionForm.equipoRequired],
+    equipoVisitante: ["--selecciona un equipo--", ValidacionForm.equipoRequired]
   })
 
   submit() {

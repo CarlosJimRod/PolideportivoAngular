@@ -4,7 +4,7 @@
       <select formControlName="equipoLocal">
         <option *ngFor="let equipo of equipos">{{equipo}}</option>
       </select>
-      <span *ngIf="this.formPartido.get('equipoLocal')?.errors?.['required']">
+      <span *ngIf="this.formPartido.get('equipoLocal')?.errors?.['equipoRequired']">
       Debe seleccionar un equipo
     </span>
     </p>
@@ -12,7 +12,7 @@
       <select formControlName="equipoVisitante">
         <option *ngFor="let equipo of equipos">{{equipo}}</option>
       </select>
-      <span *ngIf="this.formPartido.get('equipoVisitante')?.errors?.['required']">
+      <span *ngIf="this.formPartido.get('equipoVisitante')?.errors?.['equipoRequired']">
       Debe seleccionar un equipo
     </span>
     </p>
