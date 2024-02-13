@@ -1,1 +1,22 @@
-<p>partido-form works!</p>
+<div>
+  <form [formGroup]="formPartido" (ngSubmit)="submit()">
+    <p>Equipo Local<br>
+      <select formControlName="equipoLocal">
+        <option *ngFor="let equipo of equipos">{{equipo}}</option>
+      </select>
+      <span *ngIf="this.formPartido.get('equipoLocal')?.errors?.['required']">
+      Debe seleccionar un equipo
+    </span>
+    </p>
+    <p>Equipo Visitante<br>
+      <select formControlName="equipoVisitante">
+        <option *ngFor="let equipo of equipos">{{equipo}}</option>
+      </select>
+      <span *ngIf="this.formPartido.get('equipoVisitante')?.errors?.['required']">
+      Debe seleccionar un equipo
+    </span>
+    </p>
+    <button type="submit">Confirmar</button>
+  </form>
+  <p>{{resultado}}</p>
+</div>

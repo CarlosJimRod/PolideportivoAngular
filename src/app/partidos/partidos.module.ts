@@ -4,8 +4,10 @@ import {PartidoListComponent} from './partido-list/partido-list.component';
 import {PartidoDetailComponent} from './partido-detail/partido-detail.component';
 import {PartidoFormComponent} from './partido-form/partido-form.component';
 import {SucesoFormComponent} from './suceso-form/suceso-form.component';
-import {RouterLink} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {RouterLink, RouterOutlet} from "@angular/router";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {PartidosComponent} from './partidos/partidos.component';
+import {PartidosRoutingModule} from "./partidos-routing.module";
 
 
 @NgModule({
@@ -13,12 +15,16 @@ import {FormsModule} from "@angular/forms";
     PartidoListComponent,
     PartidoDetailComponent,
     PartidoFormComponent,
-    SucesoFormComponent
+    SucesoFormComponent,
+    PartidosComponent
   ],
-    imports: [
-        CommonModule,
-      RouterLink,
-      FormsModule
-    ]
+  imports: [
+    CommonModule,
+    PartidosRoutingModule,
+    RouterLink,
+    FormsModule,
+    RouterOutlet,
+    ReactiveFormsModule
+  ]
 })
 export class PartidosModule { }
