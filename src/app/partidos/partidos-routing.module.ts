@@ -14,7 +14,7 @@ const routes: Routes = [
     component: PartidoFormComponent
   },
   {
-    path: 'detail/:idLocal:idVisitante',
+    path: 'detail/:idPartido',
     component: PartidoDetailComponent
   }
 ];

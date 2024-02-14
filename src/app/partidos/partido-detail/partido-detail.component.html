@@ -5,12 +5,12 @@
     <li>{{partido.fechaHora}}</li>
     <li>
       <ul>
-        <li *ngFor="let gol of partido.goles"></li>
+        <li *ngFor="let gol of partido.goles">{{gol.idParticipante}}</li>
       </ul>
     </li>
     <li>
       <ul>
-        <li *ngFor="let tarjeta of partido.tarjetas"></li>
+        <li *ngFor="let tarjeta of partido.tarjetas">{{tarjeta.idParticipante}}, {{tarjeta.tipoTarjeta}}</li>
       </ul>
     </li>
   </ul>

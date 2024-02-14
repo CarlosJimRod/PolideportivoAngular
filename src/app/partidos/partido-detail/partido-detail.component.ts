@@ -9,8 +9,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./partido-detail.component.css']
 })
 export class PartidoDetailComponent implements OnInit {
-  idLocal: string
-  idVisitante: string
+  idPartido: string
   partidos: Partido[]
   partido: Partido
 
@@ -18,13 +17,12 @@ export class PartidoDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.idLocal = this.route.snapshot.params['idLocal']
-    this.idVisitante = this.route.snapshot.params['idVisitante']
+    this.idPartido = this.route.snapshot.params['idPartido']
     this.partidosService.getPartidos().subscribe(partidos =>
       this.partidos = partidos
     )
     for (let partido of this.partidos) {
-      if (partido.idLocal == this.idLocal && partido.idVisitante == this.idVisitante) {
+      if (partido.idPartido.toString() == this.idPartido) {
         this.partido = partido
       }
     }
