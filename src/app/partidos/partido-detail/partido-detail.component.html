@@ -1,1 +1,17 @@
-<p>partido-detail works!</p>
+<div>
+  <ul>
+    <li>{{partido.idLocal}}</li>
+    <li>{{partido.idVisitante}}</li>
+    <li>{{partido.fechaHora}}</li>
+    <li>
+      <ul>
+        <li *ngFor="let gol of partido.goles"></li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li *ngFor="let tarjeta of partido.tarjetas"></li>
+      </ul>
+    </li>
+  </ul>
+</div>

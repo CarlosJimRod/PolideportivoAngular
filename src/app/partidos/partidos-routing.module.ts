@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PartidoListComponent} from "./partido-list/partido-list.component";
 import {PartidoFormComponent} from "./partido-form/partido-form.component";
+import {PartidoDetailComponent} from "./partido-detail/partido-detail.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'form',
     component: PartidoFormComponent
+  },
+  {
+    path: 'detail/:idLocal:idVisitante',
+    component: PartidoDetailComponent
   }
 ];
 
