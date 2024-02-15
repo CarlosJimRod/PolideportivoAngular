@@ -3,20 +3,46 @@
     <p>Equipo Local<br>
       <select formControlName="equipoLocal">
         <option *ngFor="let equipo of equipos">{{equipo}}</option>
-      </select>
-      <span *ngIf="this.formPartido.get('equipoLocal')?.errors?.['equipoRequired']">
+      </select><br>
+      <span style="color: red" *ngIf="this.formPartido.get('equipoLocal')?.errors?.['equipoRequired']">
       Debe seleccionar un equipo
     </span>
     </p>
     <p>Equipo Visitante<br>
       <select formControlName="equipoVisitante">
         <option *ngFor="let equipo of equipos">{{equipo}}</option>
-      </select>
-      <span *ngIf="this.formPartido.get('equipoVisitante')?.errors?.['equipoRequired']">
+      </select><br>
+      <span style="color: red" *ngIf="this.formPartido.get('equipoVisitante')?.errors?.['equipoRequired']">
       Debe seleccionar un equipo
     </span>
     </p>
-    <button type="submit">Confirmar</button>
+    <table class="table">
+      <tr>
+        <td>
+          Fecha
+          <input type="date" formControlName="date">
+        </td>
+        <td>
+          Hora
+          <input type="time" formControlName="time">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span style="color: red" *ngIf="this.formPartido.get('date')?.errors?.['required']">
+            Debe seleccionar una fecha
+          </span>
+        </td>
+        <td>
+          <span style="color: red" *ngIf="this.formPartido.get('time')?.errors?.['required']">
+          Debe seleccionar una hora
+          </span>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <button class="btn btn-primary" type="submit">Guardar</button>
+      <button class="btn btn-danger" routerLink="/partidos">Cancelar</button>
+    </p>
   </form>
-  <p>{{resultado}}</p>
 </div>
