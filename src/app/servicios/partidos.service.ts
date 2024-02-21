@@ -35,4 +35,12 @@ export class PartidosService {
     }
     return partidos;
   }
+
+  deletePartido(idPartido: string) {
+    for (let x = 0; x < partidos_data.length; x++) {
+      if (partidos_data[x].idPartido == idPartido) {
+        partidos_data.splice(x, 1)
+      }
+    }
+  }
 }

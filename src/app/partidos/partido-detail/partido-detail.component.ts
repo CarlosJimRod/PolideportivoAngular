@@ -34,4 +34,11 @@ export class PartidoDetailComponent implements OnInit {
     return goles
   }
 
+  eliminarPartido() {
+    this.partidosService.deletePartido(this.partido.idPartido)
+  }
+
+  editarPartido() {
+
+  }
 }
