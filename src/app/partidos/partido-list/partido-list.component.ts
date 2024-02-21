@@ -12,7 +12,7 @@ export class PartidoListComponent {
   partidos: Partido[] = []
   buscador: string = ""
 
-  constructor(private service: PartidosService) {
+  constructor(private partidosService: PartidosService) {
   }
 
   partidosFiltrados() {
@@ -22,7 +22,7 @@ export class PartidoListComponent {
   }
 
   ngOnInit() {
-    this.service.getPartidos().subscribe(partidos =>
+    this.partidosService.getPartidos().subscribe(partidos =>
       this.partidos = partidos)
   }
 }

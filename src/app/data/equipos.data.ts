@@ -1,4 +1,4 @@
-export const EquiposData = [
+export const equipos_data = [
   {
     "nombre": "Athletic Club",
     "id": "ATHCLU(ESP)"

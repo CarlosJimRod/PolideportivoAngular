@@ -6,7 +6,7 @@
     <table class="table table-borderless">
         <tbody>
         <tr *ngFor="let partido of partidosFiltrados()" [routerLink]="['detail', partido.idPartido]">
-          <td>{{ partido.fechaHora | date:'d/M/yyyy H:mm' }}</td>
+          <td><i class="bi bi-calendar-week pe-2"></i>{{ partido.fechaHora | date:'dd/MM/yyyy H:mm' }}</td>
           <td>{{partido.idLocal}} - {{partido.idVisitante}}</td>
         </tr>
         </tbody>

@@ -4,6 +4,7 @@ import {HomeComponent} from "./comun/home/home.component";
 import {NoDisponibleComponent} from "./comun/no-disponible/no-disponible.component";
 import {ComunModule} from "./comun/comun.module";
 import {PartidosComponent} from "./partidos/partidos/partidos.component";
+import {EquiposComponent} from "./equipos/equipos/equipos.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     path: 'partidos',
     component: PartidosComponent,
     loadChildren: () => import('./partidos/partidos.module').then(m => m.PartidosModule)
+  },
+  {
+    path: 'equipos',
+    component: EquiposComponent,
+    loadChildren: () => import('./equipos/equipos.module').then(m => m.EquiposModule)
   },
   {
     path: '**',

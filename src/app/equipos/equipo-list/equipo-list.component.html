@@ -1,1 +1,15 @@
-<p>equipo-list works!</p>
+<div>
+  <div class="md-form active-cyan-2 mb-3">
+    <input [(ngModel)]="buscador" class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  <div *ngIf="equipos.length>0; else vacio" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+    <div style="width: 300px; height: 100px; border: 2px solid black; margin:10px; text-align: center;"
+         *ngFor="let equipo of equiposFiltrados()" [routerLink]="['detail/', equipo.id]">
+      <h3>{{equipo.nombre}}</h3>
+      <p>{{countPartidos(equipo.id)}} partidos</p>
+    </div>
+  </div>
+  <ng-template #vacio>
+    <h1>HO SE HAN ENCONTRADO EQUIPOS</h1>
+  </ng-template>
+</div>

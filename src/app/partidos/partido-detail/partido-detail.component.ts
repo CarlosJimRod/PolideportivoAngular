@@ -9,23 +9,19 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./partido-detail.component.css']
 })
 export class PartidoDetailComponent implements OnInit {
-  idPartido: string
-  partidos: Partido[]
+
   partido: Partido
 
   constructor(private partidosService: PartidosService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.idPartido = this.route.snapshot.params['idPartido']
-    this.partidosService.getPartidos().subscribe(partidos =>
-      this.partidos = partidos
-    )
-    for (let partido of this.partidos) {
-      if (partido.idPartido.toString() == this.idPartido) {
-        this.partido = partido
+    this.route.paramMap.subscribe((params) => {
+      const idPartido = params.get('idPartido')
+      if (idPartido != null) {
+        this.partido = this.partidosService.getPartidoById(idPartido)
       }
-    }
+    })
   }
 
   contarGolesPorEquipo(equipoId: string) {

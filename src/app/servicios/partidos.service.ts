@@ -12,7 +12,27 @@ export class PartidosService {
     return of(partidos_data)
   }
 
+  getPartidoById(idPartido: string): Partido {
+    let returnPartido: Partido
+    for (let partido of partidos_data) {
+      if (partido.idPartido == idPartido) {
+        returnPartido = partido
+      }
+    }
+    return returnPartido!
+  }
+
   setPartido(partido: Partido) {
     partidos_data.push(partido)
+  }
+
+  partidosTeam(id: string) {
+    let partidos: Partido[] = []
+    for (let partido of partidos_data) {
+      if (partido.idLocal == id || partido.idVisitante == id) {
+        partidos.push(partido)
+      }
+    }
+    return partidos;
   }
 }
