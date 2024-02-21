@@ -1,12 +1,12 @@
-<div>
+<div class="row">
     <div class="md-form active-cyan-2 mb-3">
       <input [(ngModel)]="buscador" class="form-control" type="text" placeholder="Search" aria-label="Search">
     </div>
-    <div *ngIf="partidos.length>0; else vacio">
-      <table>
+  <div class="col-5" *ngIf="partidos.length>0; else vacio">
+    <table class="table table-borderless">
         <tbody>
         <tr *ngFor="let partido of partidosFiltrados()" [routerLink]="['detail', partido.idPartido]">
-          <td>{{partido.fechaHora}}</td>
+          <td>{{ partido.fechaHora | date:'d/M/yyyy H:mm' }}</td>
           <td>{{partido.idLocal}} - {{partido.idVisitante}}</td>
         </tr>
         </tbody>

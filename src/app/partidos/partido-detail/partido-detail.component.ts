@@ -28,4 +28,14 @@ export class PartidoDetailComponent implements OnInit {
     }
   }
 
+  contarGolesPorEquipo(equipoId: string) {
+    let goles = 0
+    for (let gol of this.partido.goles!) {
+      if (gol.idParticipante == equipoId) {
+        goles++
+      }
+    }
+    return goles
+  }
+
 }

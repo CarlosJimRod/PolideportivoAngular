@@ -2,18 +2,18 @@ export interface Partido {
   idPartido: string
   idLocal : string,
   idVisitante : string,
-  fechaHora : string,
+  fechaHora: number,
   goles : Gol[],
   tarjetas : Tarjeta[]
 }
 
 export interface Gol {
   idParticipante : string,
-  fechaHora : string
+  fechaHora: number
 }
 
 export interface Tarjeta {
   idParticipante : string,
   tipoTarjeta : string
-  fechaHora : string
+  fechaHora: number
 }

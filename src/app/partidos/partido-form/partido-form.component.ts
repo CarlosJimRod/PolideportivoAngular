@@ -37,11 +37,19 @@ export class PartidoFormComponent implements OnInit {
         idPartido: this.idPartido.toString(),
         idLocal: this.formPartido.value.equipoLocal!,
         idVisitante: this.formPartido.value.equipoVisitante!,
-        fechaHora: this.formPartido.value.date!.toString() + " " + this.formPartido.value.time!.toString(),
+        fechaHora: this.convertDate(),
         goles: [],
         tarjetas: []
       })
       this.formPartido.reset()
     }
+  }
+
+  private convertDate() {
+    const fecha = this.formPartido.value.date;
+    const hora = this.formPartido.value.time;
+    const fechaHoraCompleta = new Date(`${fecha}T${hora}`);
+    const timeMs = fechaHoraCompleta.getTime();
+    return timeMs
   }
 }
